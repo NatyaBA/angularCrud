@@ -1,0 +1,67 @@
+* { margin: 0 auto;}
+
+
+.table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    background: white;
+    max-width: 70%;
+    width: 70%;
+    border-collapse: collapse;
+    text-align: left;
+    
+  }
+
+th {
+    font-weight: normal;
+    color: #039;
+    border-bottom: 2px solid #6678b1;
+    padding: 10px 8px;
+}
+
+td {
+    color: #669;
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+
+
+
+
+
+
+
+.heroes {
+  list-style-type: none;
+  padding: 0;
+  width: 70%;
+  justify-content: center;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: .5rem;
+
+  box-sizing: border-box;
+}
+
+button.delete , .add-button {
+  border: none;
+  left: 210px;
+  top: 5px;
+  background-color: rgb(253, 244, 162);
+  color:  #525252;
+  font-size: 1.1rem;
+  padding: 1px 10px 3px 10px;
+}
+
+.add-button {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+button.delete:hover , .add-button:hover {
+  background-color: #ffe600;
+  color: rgb(3, 59, 122);
+}
