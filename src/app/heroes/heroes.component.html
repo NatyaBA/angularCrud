@@ -1,27 +1,27 @@
 
 <div>
-  <label for="new-hero">User name: </label>
-  <input id="new-hero" #heroName />
-  <button class="add-button" (click)="add(heroName.value); heroName.value=''">
-    Add User
-  </button>
-</div>
-
-<table class="heroes">
-  <tr>
-    <th>ID</th>
-    <th>User Name</th>
-    <th>Country</th>
-    <th>Age</th>
-  </tr>
-  <tr *ngFor="let hero of heroes">
-      <td><span class="badge">{{hero.id}}</span></td> 
-      <td>{{hero.name}}</td> 
-      <td>{{hero.country}}</td> 
-      <td>{{hero.age}}</td> 
-      <button class="delete" title="delete hero"
-      (click)="delete(hero)">x</button>
-      <button class="add-button" routerLink="/detail/{{hero.id}}">Edit</button>
-    
-  </tr>
-</table>
+    <label for="new-hero">User name: </label>
+    <input id="new-hero" #heroName />
+    <button class="add-button" (click)="add(heroName.value); heroName.value=''">
+      Add User
+    </button>
+  </div>
+  
+  <table class="heroes">
+    <tr>
+      <th>ID</th>
+      <th>User Name</th>
+      <th>Country</th>
+      <th>Age</th>
+    </tr>
+    <tr *ngFor="let hero of heroes">
+        <td><span class="badge">{{hero.id}}</span></td> 
+        <td>{{hero.name}}</td> 
+        <td>{{hero.country}}</td> 
+        <td>{{hero.age}}</td> 
+        <button class="delete" title="delete hero"
+        (click)="delete(hero)">x</button>
+        <button class="add-button" routerLink="/detail/{{hero.id}}">Edit</button>
+      
+    </tr>
+  </table>
