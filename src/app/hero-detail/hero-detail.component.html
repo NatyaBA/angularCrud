@@ -1,21 +1,20 @@
-<div *ngIf="hero" class="edit">
+<div *ngIf="hero">
     <h2>{{hero.name | uppercase}} Details</h2>
     <div><span>id: </span>{{hero.id}}</div>
     <div>
-      <label for="hero-name">User name: </label>
-      <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
-    </div>
-    <div>
-        
-      <label for="hero-name">User country: </label>
-        <input id="hero-name" [(ngModel)]="hero.country" placeholder="Hero name"/>
-      </div>
-      <div>
-
-        <label for="hero-name">User age: </label>
-        <input id="hero-name" [(ngModel)]="hero.age" placeholder="Hero name"/>
-      </div>
-
+    <table>
+        <tr>
+            <td for="name">Name: </td>
+            <td><input id="hero-name" [(ngModel)]="hero.name" placeholder="name"></td>
+        </tr>
+        <tr>
+            <td for="age">Age: </td>
+            <td><input id="age" [(ngModel)]="hero.age" placeholder="age"></td>
+        </tr>
+        <tr>
+            <td for="country">Country:</td>
+            <td>  <input id="country" [(ngModel)]="hero.country" placeholder="country"></td>
+        </tr>
+    </table>
     <button (click)="goBack()">go back</button>
-    <button (click)="save()">save</button>
-  </div>
+</div>
