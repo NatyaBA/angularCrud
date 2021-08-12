@@ -1,4 +1,23 @@
-
+<div>
+<table>
+  <tr>
+      <td for="name">Name: </td>
+      <td> <input id="new-hero" #heroName></td>
+  </tr>
+  <tr>
+      <td for="name">Country:</td>
+      <td><input id="new-hero" #heroCountry></td>
+  </tr>
+  <tr>
+    <td for="name">Age: </td>
+    <td><input pattern="^[0-9]+$" id="new-hero" #heroAge></td>
+  </tr>
+  <button class="createButton" (click)="add(heroName.value, heroCountry.value, heroAge.value); heroName.value=''; heroAge.value=''; heroCountry.value=''">
+    Add user
+  </button>
+</table>
+  
+</div>
 <table class="table">
   <tr>
       <th>ID</th>
@@ -10,9 +29,9 @@
   <tr *ngFor="let hero of heroes">
       <td>{{hero.id}}</td>
       <td>{{hero.name}}</td>
-      <td>{{hero.age}}</td>
       <td>{{hero.country}}</td>
-      <button routerLink="/detail/{{hero.id}}">edit</button>
- 
+      <td>{{hero.age}}</td>
+     <td class='edit'> <button routerLink="/detail/{{hero.id}}">edit</button></td>  
+     <td class='delete'><button title="delete hero"(click)="delete(hero)">x</button></td>
     </tr>
 </table>

@@ -98,23 +98,7 @@ td {
   width: 50px;
 }
 
-.close_modal_window {
-  margin-left: 92%;
-  font-size: 30px;
-  color: #039;
-  border: none;
-  background-color: #f7e4b1;
-}
-
-.modal input {
-  border: none;
-  height: 30px;
-  font-size: 20px;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-}
-
 .createButton {
-  background-color: rgb(255, 255, 255);
   margin-left: 80%;
   margin-top: 40px;
   width: 100px;

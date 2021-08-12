@@ -1,6 +1,6 @@
 export interface Hero {
     id: number;
     name: string;
-    age: number;
+    age: string;
     country: string;
   }
