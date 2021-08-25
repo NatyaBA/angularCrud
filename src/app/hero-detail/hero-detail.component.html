@@ -13,9 +13,13 @@
         </tr>
         <tr>
             <td for="age">Age: </td>
-            <td><input id="age" pattern="^[0-9]+$" [(ngModel)]="hero.age" placeholder="age"></td>
+            <td><input id="age" #heroAge pattern="^[0-9]+$" [(ngModel)]="hero.age" placeholder="age"></td>
         </tr>
     </table>
-    <button (click)="save()">save</button>
+    <button mat-button (click)="save(heroAge.value)">save</button>
     <button (click)="goBack()">go back</button>
+    <div *ngIf="!showMainContent" id="ages">
+        некорректно введен возраст
+    </div>
+  </div>
 </div>

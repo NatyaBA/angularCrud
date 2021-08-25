@@ -1,37 +1,37 @@
-<div>
-<table>
-  <tr>
-      <td for="name">Name: </td>
-      <td> <input id="new-hero" #heroName></td>
-  </tr>
-  <tr>
-      <td for="name">Country:</td>
-      <td><input id="new-hero" #heroCountry></td>
-  </tr>
-  <tr>
-    <td for="name">Age: </td>
-    <td><input pattern="^[0-9]+$" id="new-hero" #heroAge></td>
-  </tr>
-  <button class="createButton" (click)="add(heroName.value, heroCountry.value, heroAge.value); heroName.value=''; heroAge.value=''; heroCountry.value=''">
-    Add user
-  </button>
-</table>
-  
+<div class="headButton" >
+  <button routerLink="/addUser">Add user</button>
+  <button routerLink="/search">Find by User Name</button>
 </div>
-<table class="table">
-  <tr>
-      <th>ID</th>
-      <th>User Name</th>
-      <th>Country</th>
-      <th>Age</th>
-  </tr>
 
-  <tr *ngFor="let hero of heroes">
-      <td>{{hero.id}}</td>
-      <td>{{hero.name}}</td>
-      <td>{{hero.country}}</td>
-      <td>{{hero.age}}</td>
-     <td class='edit'> <button routerLink="/detail/{{hero.id}}">edit</button></td>  
-     <td class='delete'><button title="delete hero"(click)="delete(hero)">x</button></td>
-    </tr>
+<table  matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let hero"> {{hero.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+    <td mat-cell *matCellDef="let hero"> {{hero.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef> Country </th>
+    <td mat-cell *matCellDef="let hero"> {{hero.country}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Age </th>
+    <td mat-cell *matCellDef="let hero"> {{hero.age}} </td>
+  </ng-container>
+  <ng-container matColumnDef="buttonOne">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let hero" class='edit'>  <button routerLink="/detail/{{hero.id}}">edit</button> </td>
+  </ng-container>
+  <ng-container matColumnDef="buttonSecond">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let hero" class='delete' > <button title="delete hero"(click)="delete(hero)">x</button> </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+

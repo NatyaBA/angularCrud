@@ -12,6 +12,7 @@ import { HeroService } from '../hero.service';
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
+  showMainContent: Boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,10 +34,19 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();
   }
 
-  save(): void {
-    if (this.hero) {
-      this.heroService.updateHero(this.hero)
-        .subscribe(() => this.goBack());
-    }
+  save(age: string): void {
+    age = age.trim();
+    for (let i=1; i < 101; i++)
+      if (age == String(i)) {
+        this.showMainContent = true;
+          if (this.hero) {
+            this.heroService.updateHero(this.hero)
+            .subscribe(() => this.goBack());
+          }
+          break;
+      }
+      else {
+        this.showMainContent = false;
+      }
   }
 }

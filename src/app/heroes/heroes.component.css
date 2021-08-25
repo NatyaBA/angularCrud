@@ -1,12 +1,13 @@
 * {
   margin: 0 auto;
 }
-
-.button {
-  justify-content: center;
-  width: 310px;
+table {
+  width: 70%;
 }
 
+th.mat-sort-header-sorted {
+  color: black;
+}
 .text {
   display: none;
   position: absolute;
@@ -14,8 +15,20 @@
   color: crimson;
   margin-left: 70px;
 }
+.modal_content {
+  position: absolute;
+  justify-content: center;
+}
 
-.createButton,
+#age {
+  color: red;
+  font-size: 20px;
+  border: solid;
+  padding: 10px;
+  width: 240px;
+  justify-content: center;
+}
+
 .delete button,
 .edit button {
   width: 70px;
@@ -98,9 +111,16 @@ td {
   width: 50px;
 }
 
-.createButton {
-  margin-left: 80%;
-  margin-top: 40px;
+.headButton {
+    margin: 0px 10% 40px;
+    display: flex;
+}
+
+.headButton button {
+  margin: 50px 40px auto;
   width: 100px;
   height: 40px;
+  background-color: #ffe293;
+  border: none;
+  border-radius: 5px;
 }
